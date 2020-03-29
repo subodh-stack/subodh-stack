@@ -2,8 +2,9 @@ package test;
 
 
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.WebDriver;
+
 
 import pom.HomePage;
 import utility.Chrome;
@@ -18,6 +19,8 @@ public class TestSignup extends Chrome {
 		 driver = Chrome.Browser();
 	}
 	
+
+
 @org.testng.annotations.Test
 public void test() 
 {
