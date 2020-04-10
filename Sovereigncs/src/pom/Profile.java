@@ -22,15 +22,15 @@ public class Profile {
 	{
 		profile.click();
 	}
-		public void orders()
-		{
-			orders.click();
-		}
-			public String price()
-			{
-				String ordervalue = price.getText();
-				System.out.println("Oder final value is "+ ordervalue);
-				return ordervalue;
-			}
+	public void orders()
+	{
+		orders.click();
+	}
+	public String price()
+	{
+		String ordervalue = price.getText();
+		System.out.println("Oder final value is "+ ordervalue);
+		return ordervalue;
+	}
 
 }

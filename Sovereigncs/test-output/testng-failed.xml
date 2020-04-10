@@ -5,6 +5,8 @@
     <classes>
       <class name="test.TestLogin">
         <methods>
+          <include name="amount"/>
+          <include name="closeBrowser"/>
           <include name="signin"/>
           <include name="browser"/>
           <include name="selectProduct"/>

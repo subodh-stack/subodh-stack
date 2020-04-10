@@ -1,10 +1,14 @@
 package test;
 
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
+import pom.Checkout;
 import pom.HomePage;
 import pom.PlaceOrder;
 import pom.Profile;
@@ -15,6 +19,7 @@ public class TestLogin {
 	private WebDriver driver;
 	private HomePage home;
 	private PlaceOrder order;
+	private Checkout checkout;
 	private String value;
 	private Profile user;
 	private String cost;
@@ -27,11 +32,11 @@ public class TestLogin {
 	}
 
 	@org.testng.annotations.Test
-	public void signin()
+	public void signin() throws EncryptedDocumentException, IOException
 	{
 		home = new HomePage(driver);
 		home.signin();
-		home.email("testforplan@gmail.com");
+		home.email();
 		home.passwd();
 		home.login();
 	}
@@ -40,19 +45,20 @@ public class TestLogin {
 	public void selectProduct()
 	{
 		order = new PlaceOrder(driver);
+		checkout = new Checkout(driver);
 		order.womensection();
 		order.product(driver);
 		order.more();
 		order.plus();
 		order.addtocart();
-		order.checkout1();
-		value = order.cartvalue();
-		order.checkout2();
-		order.checkout3();
-		order.terms();
-		order.checkout4();
-		order.pay();
-		order.checkout5();
+		checkout.checkout1();
+		value = checkout.cartvalue();
+		checkout.checkout2();
+		checkout.checkout3();
+		checkout.terms();
+		checkout.checkout4();
+		checkout.pay();
+		checkout.checkout5();
 	}
 	
 	@org.testng.annotations.Test (dependsOnMethods = "selectProduct")
